@@ -2405,6 +2405,11 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     background-color: transparent;
 }
 
+/* Hide the audio track selection line in the playback menu */
+.selectAudioContainer.trackSelectionFieldContainer {
+    display: none !important;
+}
+
 #viewPanel .ui-panel-inner {
     margin-top: 4em;
 }
