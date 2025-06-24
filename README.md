@@ -2,7 +2,7 @@
 This is a Jellyfin theme inspired from JellySeerr to improve the overall look and experience with various fixes to the UI and behaviour.
 
 
-#### **Author:** [lscambo13](https://github.com/lscambo13)
+#### **Author:** [CodeSieb](https://github.com/CodeSieb)
 Originaly by lscambo13
 <hr>
 
