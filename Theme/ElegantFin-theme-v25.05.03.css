@@ -163,11 +163,39 @@ html {
     border-radius: var(--largeRadius);
     border: var(--borderColor) solid calc(2 * var(--borderWidth)) !important;
     overflow: hidden !important;
-    transition: transform 125ms;
+    transition: transform 150ms ease-out, 
+                box-shadow 150ms ease-out,
+                border-color 150ms ease-out,
+                filter 150ms ease-out;
+    transform-origin: center;
+    will-change: transform;
 }
 
 .layout-mobile .cardScalable {
     border: var(--defaultBorder) !important;
+}
+
+/* Hover state - desktop only */
+@media (hover: hover) and (pointer: fine) {
+    .card.card-hoverable:hover .cardScalable {
+        transform: scale(1.03);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        border-color: var(--textColor) !important;
+        filter: brightness(1.05);
+        z-index: 1;
+    }
+    
+    /* Slightly stronger effect when clicked */
+    .card.card-hoverable:active .cardScalable {
+        transform: scale(1.01);
+        transition-duration: 50ms;
+    }
+}
+
+/* Mobile touch feedback */
+.card.card-hoverable:active .cardScalable {
+    transform: scale(0.98);
+    transition-duration: 50ms;
 }
 
 .cardImageContainer {
@@ -190,10 +218,6 @@ html {
     color: var(--borderColor);
 }
 
-.card.card-hoverable:hover .cardScalable {
-    border-color: var(--textColor) !important;
-}
-
 .card.card-hoverable:hover .cardImageContainer {
     transform: scale(1.025);
     filter: brightness(1.125);
@@ -203,7 +227,6 @@ html {
     transition: transform .125s;
 }
 
-.card.card-hoverable:hover .cardScalable,
 .card.card-hoverable:hover .itemSelectionPanel {
     transform: scale(1.02);
 }
